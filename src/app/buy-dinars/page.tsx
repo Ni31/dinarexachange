@@ -1,14 +1,86 @@
+'use client';
+
+import { useState } from 'react';
 import Layout from '../components/Layout';
 import Link from 'next/link';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: "Buy Iraqi Dinar | Authentic Banknotes | Dinar Exchange Australia",
-  description: "Buy authentic Iraqi Dinar banknotes with certificates of authenticity. Secure payment, fast delivery across Australia. Order genuine Iraqi currency today.",
-  keywords: "buy Iraqi Dinar, authentic Iraqi banknotes, Iraqi currency, Dinar Australia, currency exchange",
-};
+import { useRouter } from 'next/navigation';
 
 export default function BuyDinarsPage() {
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    mobile: '',
+    country: '',
+    address: '',
+    city: '',
+    state: '',
+    postcode: '',
+    currencyAmount: '',
+    quantity: 1
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors: {[key: string]: string} = {};
+    
+    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
+    if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    if (!formData.mobile.trim()) newErrors.mobile = 'Mobile number is required';
+    if (!formData.country) newErrors.country = 'Country is required';
+    if (!formData.address.trim()) newErrors.address = 'Address is required';
+    if (!formData.city.trim()) newErrors.city = 'City is required';
+    if (!formData.state.trim()) newErrors.state = 'State is required';
+    if (!formData.postcode.trim()) newErrors.postcode = 'Postcode is required';
+    if (!formData.currencyAmount) newErrors.currencyAmount = 'Currency amount is required';
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Store order data in sessionStorage for the confirmation page
+      sessionStorage.setItem('orderData', JSON.stringify(formData));
+      
+      // Navigate to payment confirmation
+      router.push('/payment-confirmation');
+    } catch (error) {
+      console.error('Error submitting order:', error);
+      alert('Error submitting order. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   // const packages = [
   //   {
   //     id: 1,
@@ -72,56 +144,149 @@ export default function BuyDinarsPage() {
               <h2 className="text-2xl font-bold mb-6">Step 1: Order Details</h2>
               <p className="text-gray-600 mb-6">Fill in your information and select the currency amount you wish to purchase.</p>
               
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2">Full Name *</label>
-                    <input type="text" className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black" />
+                    <label className="block text-sm font-medium mb-2">First Name *</label>
+                    <input 
+                      type="text" 
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      className={`w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black ${
+                        errors.firstName ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                    />
+                    {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Email Address *</label>
-                    <input type="email" className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black" />
+                    <label className="block text-sm font-medium mb-2">Last Name *</label>
+                    <input 
+                      type="text" 
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      className={`w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black ${
+                        errors.lastName ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                    />
+                    {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
                   </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium mb-2">Email Address *</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={`w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black ${
+                      errors.email ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                  />
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">Mobile Number *</label>
-                    <input type="tel" className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black" />
+                    <input 
+                      type="tel" 
+                      name="mobile"
+                      value={formData.mobile}
+                      onChange={handleInputChange}
+                      className={`w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black ${
+                        errors.mobile ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                    />
+                    {errors.mobile && <p className="text-red-500 text-sm mt-1">{errors.mobile}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Country *</label>
-                    <select className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black">
-                      <option>Select country</option>
-                      <option>Australia</option>
-                      <option>New Zealand</option>
+                    <select 
+                      name="country"
+                      value={formData.country}
+                      onChange={handleInputChange}
+                      className={`w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black ${
+                        errors.country ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                    >
+                      <option value="">Select country</option>
+                      <option value="Australia">Australia</option>
+                      <option value="New Zealand">New Zealand</option>
                     </select>
+                    {errors.country && <p className="text-red-500 text-sm mt-1">{errors.country}</p>}
                   </div>
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium mb-2">Street Address *</label>
-                  <input type="text" placeholder="Enter your full address" className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black" />
+                  <input 
+                    type="text" 
+                    name="address"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    placeholder="Enter your full address" 
+                    className={`w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black ${
+                      errors.address ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                  />
+                  {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address}</p>}
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">City *</label>
-                    <input type="text" className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black" />
+                    <input 
+                      type="text" 
+                      name="city"
+                      value={formData.city}
+                      onChange={handleInputChange}
+                      className={`w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black ${
+                        errors.city ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                    />
+                    {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">State *</label>
-                    <input type="text" className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black" />
+                    <input 
+                      type="text" 
+                      name="state"
+                      value={formData.state}
+                      onChange={handleInputChange}
+                      className={`w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black ${
+                        errors.state ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                    />
+                    {errors.state && <p className="text-red-500 text-sm mt-1">{errors.state}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Postcode *</label>
-                    <input type="text" className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black" />
+                    <input 
+                      type="text" 
+                      name="postcode"
+                      value={formData.postcode}
+                      onChange={handleInputChange}
+                      className={`w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black ${
+                        errors.postcode ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                    />
+                    {errors.postcode && <p className="text-red-500 text-sm mt-1">{errors.postcode}</p>}
                   </div>
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium mb-2">Select Currency Amount *</label>
-                  <select className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black">
+                  <select 
+                    name="currencyAmount"
+                    value={formData.currencyAmount}
+                    onChange={handleInputChange}
+                    className={`w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black ${
+                      errors.currencyAmount ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                  >
                     <option value="">Please select Iraqi Dinar amount</option>
                     <option value="25000-186">25,000 IQD - $186 AUD</option>
                     <option value="50000-281">50,000 IQD - $281 AUD</option>
@@ -131,16 +296,28 @@ export default function BuyDinarsPage() {
                     <option value="500000-1875">500,000 IQD - $1,875 AUD</option>
                     <option value="1000000-2800">1,000,000 IQD - $2,800 AUD</option>
                   </select>
+                  {errors.currencyAmount && <p className="text-red-500 text-sm mt-1">{errors.currencyAmount}</p>}
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium mb-2">Quantity</label>
-                  <input type="number" defaultValue="1" className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black" />
+                  <input 
+                    type="number" 
+                    name="quantity"
+                    value={formData.quantity}
+                    onChange={handleInputChange}
+                    min="1"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black"
+                  />
                 </div>
                 
-                <Link href="/payment-confirmation" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors duration-200 inline-block text-center">
-                  Continue to Payment Details
-                </Link>
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-400 text-white py-3 rounded-lg font-semibold transition-colors duration-200"
+                >
+                  {isSubmitting ? 'Processing...' : 'Continue to Payment Details'}
+                </button>
               </form>
             </div>
           </div>
@@ -206,7 +383,7 @@ export default function BuyDinarsPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Need Help?</h2>

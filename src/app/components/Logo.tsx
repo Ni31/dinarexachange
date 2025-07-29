@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaChartLine, FaGlobe } from 'react-icons/fa';
+import { FaGlobe } from 'react-icons/fa';
+import Image from 'next/image';
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
@@ -34,8 +34,14 @@ export default function Logo({ size = 'md', showText = true, className = '' }: L
 
   return (
     <div className={`flex items-center ${className}`}>
-      <div className={`bg-orange-500 rounded-lg flex items-center justify-center mr-2 ${sizeClasses[size]}`}>
-        <FaChartLine className={`text-white ${iconSizeClasses[size]}`} />
+      <div className={`bg-white-500 rounded-lg flex items-center justify-center mr-2 ${sizeClasses[size]}`}>
+        <Image
+          src="/logo.png"
+          alt="Dinar Exchange Logo"
+          width={size === 'sm' ? 24 : size === 'md' ? 32 : 40}
+          height={size === 'sm' ? 24 : size === 'md' ? 32 : 40}
+          className="object-contain"
+        />
       </div>
       {showText && (
         <div>
