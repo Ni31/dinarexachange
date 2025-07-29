@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Layout from '../components/Layout';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export default function BuyDinarsPage() {

@@ -14,12 +14,6 @@ export default function Logo({ size = 'md', showText = true, className = '' }: L
     lg: 'w-10 h-10'
   };
 
-  const iconSizeClasses = {
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-lg'
-  };
-
   const textSizeClasses = {
     sm: 'text-lg',
     md: 'text-xl',

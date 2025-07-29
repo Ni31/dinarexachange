@@ -636,7 +636,7 @@ export default function HomeClient() {
               <span className="text-gray-600 ml-1">{reviews[currentReview].location}</span>
             )}
           </div>
-          <p className="text-gray-800 animate-fade-in">"{reviews[currentReview].comment}"</p>
+          <p className="text-gray-800 animate-fade-in">&ldquo;{reviews[currentReview].comment}&rdquo;</p>
         </div>
         
         <div className="text-xs text-gray-600 border-t border-gray-300/50 pt-2 mb-2">
