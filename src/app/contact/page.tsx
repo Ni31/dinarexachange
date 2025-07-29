@@ -55,24 +55,24 @@ export default function Contact() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">Contact Us</h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-gray-900">Contact Us</h1>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto px-4">
             Connect with our professional organization for all your currency exchange requirements
           </p>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
             {/* Contact Form */}
-            <div className="bg-white rounded-3xl shadow-2xl p-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Send us a Message</h2>
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
                     <input 

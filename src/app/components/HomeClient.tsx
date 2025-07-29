@@ -114,66 +114,66 @@ export default function HomeClient() {
         <Header />
         
         {/* --- 1. Hero Section --- */}
-        <section className="relative bg-gradient-to-r from-slate-900 to-blue-900 text-white py-24 overflow-hidden">
+        <section className="relative bg-gradient-to-r from-slate-900 to-blue-900 text-white py-12 sm:py-16 lg:py-24 overflow-hidden">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center space-y-10">
-              <div className="space-y-8">
-                <h1 className="text-5xl lg:text-6xl font-bold leading-tight font-poppins animate-fade-in-up opacity-0 animation-delay-200">
+            <div className="text-center space-y-6 sm:space-y-8 lg:space-y-10">
+              <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight font-poppins animate-fade-in-up opacity-0 animation-delay-200">
                   Welcome to <span className="text-orange-500 animate-pulse">Dinar Exchange</span> New Zealand
                 </h1>
-                <h2 className="text-xl lg:text-2xl font-semibold text-gray-200 font-poppins animate-fade-in-up opacity-0 animation-delay-400">
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-200 font-poppins animate-fade-in-up opacity-0 animation-delay-400">
                   Your Premier Hub for Iraqi Dinar Transactions
                 </h2>
-                <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto font-poppins animate-fade-in-up opacity-0 animation-delay-600">
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto font-poppins animate-fade-in-up opacity-0 animation-delay-600 px-4">
                   Your reliable and trusted partner for Iraqi Dinar transactions. Whether you&apos;re an experienced investor or currency collector, our platform is tailored to your needs.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up opacity-0 animation-delay-800">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 font-poppins transform hover:scale-105 hover:shadow-lg">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center animate-fade-in-up opacity-0 animation-delay-800 px-4">
+                <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 font-poppins transform hover:scale-105 hover:shadow-lg">
                   Buy <span className="text-white">Iraqi Dinars</span> Now
                 </button>
-                <button className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 font-poppins transform hover:scale-105 hover:shadow-lg">
+                <button className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 font-poppins transform hover:scale-105 hover:shadow-lg">
                   View Pricing
                 </button>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 pt-8 sm:pt-12 px-4">
                 <div className="text-center animate-fade-in-up opacity-0 animation-delay-1000 transform hover:scale-105 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow">
-                    <svg className="text-white text-2xl w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 animate-bounce-slow">
+                    <svg className="text-white w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <div className="text-lg font-bold text-orange-500 mb-2 font-poppins">100% Authentic</div>
-                  <div className="text-sm text-gray-300 font-poppins">Certificate with every order</div>
+                  <div className="text-sm sm:text-lg font-bold text-orange-500 mb-1 sm:mb-2 font-poppins">100% Authentic</div>
+                  <div className="text-xs sm:text-sm text-gray-300 font-poppins">Certificate with every order</div>
                 </div>
                 <div className="text-center animate-fade-in-up opacity-0 animation-delay-1200 transform hover:scale-105 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow animation-delay-200">
-                    <svg className="text-white text-2xl w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 animate-bounce-slow animation-delay-200">
+                    <svg className="text-white w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
                     </svg>
                   </div>
-                  <div className="text-lg font-bold text-orange-500 mb-2 font-poppins">4.8 Rated</div>
-                  <div className="text-sm text-gray-300 font-poppins">Verified customer reviews</div>
+                  <div className="text-sm sm:text-lg font-bold text-orange-500 mb-1 sm:mb-2 font-poppins">4.8 Rated</div>
+                  <div className="text-xs sm:text-sm text-gray-300 font-poppins">Verified customer reviews</div>
                 </div>
                 <div className="text-center animate-fade-in-up opacity-0 animation-delay-1400 transform hover:scale-105 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow animation-delay-400">
-                    <svg className="text-white text-2xl w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 animate-bounce-slow animation-delay-400">
+                    <svg className="text-white w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <div className="text-lg font-bold text-orange-500 mb-2 font-poppins">NZ Registered</div>
-                  <div className="text-sm text-gray-300 font-poppins">Secure delivery across New Zealand</div>
+                  <div className="text-sm sm:text-lg font-bold text-orange-500 mb-1 sm:mb-2 font-poppins">NZ Registered</div>
+                  <div className="text-xs sm:text-sm text-gray-300 font-poppins">Secure delivery across New Zealand</div>
                 </div>
                 <div className="text-center animate-fade-in-up opacity-0 animation-delay-1600 transform hover:scale-105 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow animation-delay-600">
-                    <svg className="text-white text-2xl w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 animate-bounce-slow animation-delay-600">
+                    <svg className="text-white w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <div className="text-lg font-bold text-orange-500 mb-2 font-poppins">10+ Years</div>
-                  <div className="text-sm text-gray-300 font-poppins">Trusted business in operation</div>
+                  <div className="text-sm sm:text-lg font-bold text-orange-500 mb-1 sm:mb-2 font-poppins">10+ Years</div>
+                  <div className="text-xs sm:text-sm text-gray-300 font-poppins">Trusted business in operation</div>
                 </div>
               </div>
             </div>
@@ -181,71 +181,71 @@ export default function HomeClient() {
         </section>
 
         {/* --- 2. Buy Iraqi Dinars Section (Pricing) --- (MOVED HERE AS REQUESTED) */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4 font-poppins">Buy Iraqi Dinars</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-poppins leading-relaxed">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 font-poppins">Buy Iraqi Dinars</h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-poppins leading-relaxed px-4">
                 Choose from our range of authentic Iraqi Dinar packages with guaranteed authenticity and secure delivery. All banknotes come with a certificate of authenticity.
               </p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
-                <div className="text-lg font-semibold text-gray-900 mb-2">25,000 IQD</div>
-                <div className="text-xl font-bold text-gray-900 mb-3">$186</div>
-                <button className="w-full bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+              <div className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
+                <div className="text-base sm:text-lg font-semibold text-gray-900 mb-2">25,000 IQD</div>
+                <div className="text-lg sm:text-xl font-bold text-gray-900 mb-3">$186</div>
+                <button className="w-full bg-black hover:bg-gray-800 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
                   Order Now
                 </button>
               </div>
               
-              <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
-                 <div className="text-lg font-semibold text-gray-900 mb-2">50,000 IQD</div>
-                 <div className="text-xl font-bold text-orange-600 mb-3">$281</div>
-                 <button className="w-full bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
+                 <div className="text-base sm:text-lg font-semibold text-gray-900 mb-2">50,000 IQD</div>
+                 <div className="text-lg sm:text-xl font-bold text-orange-600 mb-3">$281</div>
+                 <button className="w-full bg-black hover:bg-gray-800 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
                     Order Now
                   </button>
                </div>
               
-              <div className="bg-orange-50 border-2 border-orange-300 rounded-lg p-4 text-center relative hover:shadow-lg hover:border-orange-400 transition-all duration-300 hover:-translate-y-1">
-                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-3 py-1 rounded text-xs font-medium animate-pulse">
+              <div className="bg-orange-50 border-2 border-orange-300 rounded-lg p-3 sm:p-4 text-center relative hover:shadow-lg hover:border-orange-400 transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-2 sm:px-3 py-1 rounded text-xs font-medium animate-pulse">
                   Most Popular
                 </div>
-                <div className="text-lg font-semibold text-gray-900 mb-2 mt-2">75,000 IQD</div>
-                <div className="text-xl font-bold text-orange-600 mb-3">$325</div>
-                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
+                <div className="text-base sm:text-lg font-semibold text-gray-900 mb-2 mt-2">75,000 IQD</div>
+                <div className="text-lg sm:text-xl font-bold text-orange-600 mb-3">$325</div>
+                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
                   Order Now
                 </button>
               </div>
               
-              <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
-                 <div className="text-lg font-semibold text-gray-900 mb-2">100,000 IQD</div>
-                  <div className="text-xl font-bold text-orange-600 mb-3">$381</div>
-                  <button className="w-full bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
+                 <div className="text-base sm:text-lg font-semibold text-gray-900 mb-2">100,000 IQD</div>
+                  <div className="text-lg sm:text-xl font-bold text-orange-600 mb-3">$381</div>
+                  <button className="w-full bg-black hover:bg-gray-800 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
                     Order Now
                   </button>
                </div>
               
-              <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
-                 <div className="text-lg font-semibold text-gray-900 mb-2">200,000 IQD</div>
-                  <div className="text-xl font-bold text-orange-600 mb-3">$656</div>
-                  <button className="w-full bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
+                 <div className="text-base sm:text-lg font-semibold text-gray-900 mb-2">200,000 IQD</div>
+                  <div className="text-lg sm:text-xl font-bold text-orange-600 mb-3">$656</div>
+                  <button className="w-full bg-black hover:bg-gray-800 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
                     Order Now
                   </button>
                </div>
               
-              <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
-                 <div className="text-lg font-semibold text-gray-900 mb-2">500,000 IQD</div>
-                  <div className="text-xl font-bold text-orange-600 mb-3">$1,875</div>
-                  <button className="w-full bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
+                 <div className="text-base sm:text-lg font-semibold text-gray-900 mb-2">500,000 IQD</div>
+                  <div className="text-lg sm:text-xl font-bold text-orange-600 mb-3">$1,875</div>
+                  <button className="w-full bg-black hover:bg-gray-800 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
                     Order Now
                   </button>
                </div>
               
-              <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
-                 <div className="text-lg font-semibold text-gray-900 mb-2">1,000,000 IQD</div>
-                  <div className="text-xl font-bold text-orange-600 mb-3">$2,800</div>
-                  <button className="w-full bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 text-center hover:shadow-md hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
+                 <div className="text-base sm:text-lg font-semibold text-gray-900 mb-2">1,000,000 IQD</div>
+                  <div className="text-lg sm:text-xl font-bold text-orange-600 mb-3">$2,800</div>
+                  <button className="w-full bg-black hover:bg-gray-800 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-200 hover:shadow-md active:scale-95 active:shadow-sm">
                     Order Now
                   </button>
                </div>

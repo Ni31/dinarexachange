@@ -7,10 +7,10 @@ import Logo from './Logo';
 export default function Footer() {
   return (
     <footer className="bg-slate-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4 sm:col-span-2 lg:col-span-1">
             <Logo size="sm" />
             <p className="text-gray-300 text-sm leading-relaxed">
               New Zealand&apos;s most trusted Iraqi Dinar exchange platform. We provide authentic banknotes with guaranteed security and fast delivery.
@@ -40,7 +40,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link href="/buy-dinars" className="text-gray-300 hover:text-orange-500 transition-colors">Buy Iraqi Dinar</Link></li>
               <li><Link href="/zimbabwe-dollar" className="text-gray-300 hover:text-orange-500 transition-colors">Buy Zimbabwe Dollar</Link></li>
@@ -53,8 +53,8 @@ export default function Footer() {
 
           {/* Contact Us */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <div className="space-y-3">
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Contact Us</h3>
+            <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center space-x-3">
                 <svg className="text-orange-600 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -85,8 +85,8 @@ export default function Footer() {
 
           {/* Payment & Security */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Payment & Security</h3>
-            <div className="space-y-3">
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Payment & Security</h3>
+            <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center space-x-2">
                 <svg className="text-orange-600 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
